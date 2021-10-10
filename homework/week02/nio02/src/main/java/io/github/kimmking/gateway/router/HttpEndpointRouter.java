@@ -1,10 +1,12 @@
 package io.github.kimmking.gateway.router;
 
+import java.net.URI;
+import java.net.URL;
 import java.util.List;
 
 public interface HttpEndpointRouter {
-    
-    String route(List<String> endpoints);
+
+    URL route(List<URL> endpoints);
     
     // Load Balance
     // Random
