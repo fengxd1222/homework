@@ -70,7 +70,7 @@ public class MyHttpClient {
     /**
      * post 方法
      * @param url 请求链接
-     * @param paramEntityJson 对象参数json字符串
+     * @param paramEntityJson  对象参数json字符串
      * @see Optional
      * @throws URISyntaxException
      */
