@@ -10,10 +10,10 @@ import java.util.concurrent.Executors;
 /**
  * 课程演示代码
  */
-public class HttpServer01 {
+public class HttpServer02 {
     public static void main(String[] args) throws IOException {
         ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() + 2);
-        ServerSocket serverSocket = new ServerSocket(8801);
+        ServerSocket serverSocket = new ServerSocket(8802);
 
         while (true){
             try {
@@ -30,7 +30,7 @@ public class HttpServer01 {
             PrintWriter printWriter = new PrintWriter(accept.getOutputStream(),true);
             printWriter.println("HTTP/1.1 200 ok");
             printWriter.println("Content-Type:text/html;charset=utf-8");
-            String body = "Hello World,This is server01";
+            String body = "Hello World,This is server02";
             printWriter.println("Content-Length:"+body.getBytes().length);
             printWriter.println();
             printWriter.println(body);
