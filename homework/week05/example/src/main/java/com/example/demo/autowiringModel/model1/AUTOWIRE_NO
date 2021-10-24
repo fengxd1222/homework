@@ -1,0 +1,2 @@
+AUTOWIRE_NO
+默认情况 非自动状态，根据ref元素装配（先通过bean的类型。即person接口找寻他的实现类，当发现多个时，再根据beanname）
