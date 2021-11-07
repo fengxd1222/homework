@@ -1,0 +1,50 @@
+
+spring:
+  shardingsphere:
+    datasource:
+      names: db1,db2
+      db1:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/mall?characterEncoding=UTF8&rewriteBatchedStatements=true
+        username: root
+        password: QWERasdf1222
+        type: com.alibaba.druid.pool.DruidDataSource
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+      db2:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/mall1?characterEncoding=UTF8&rewriteBatchedStatements=true
+        username: root
+        password: QWERasdf1222
+        type: com.alibaba.druid.pool.DruidDataSource
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+    masterslave:
+      load-balance-algorithm-type: round_robin
+      name: ms
+      master-data-source-name: db1
+      slave-data-source-names: db1,db2
+server:
+  port: 8088
